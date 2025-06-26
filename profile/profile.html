@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="container">
+    <div class="profile-box">
+      <img src="../radiance logo.png" class="logo" alt="Radiance Logo" />
+      <h2>Your Profile</h2>
+      <div id="profileData">
+        <p><strong>Name:</strong> <span id="pName"></span></p>
+        <p><strong>Institute:</strong> <span id="pInstitute"></span></p>
+        <p><strong>Batch:</strong> <span id="pBatch"></span></p>
+        <p><strong>Contact:</strong> <span id="pContact"></span></p>
+        <p><strong>Email:</strong> <span id="pEmail"></span></p>
+      </div>
+
+      <button id="editToggleBtn">Edit Profile</button>
+
+      <form id="editForm" class="hidden">
+        <input type="text" id="editName" placeholder="Full Name" required>
+        <input type="text" id="editInstitute" placeholder="Institute" required>
+        <select id="editBatch" required>
+          <option value="">Select Batch</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+        </select>
+        <input type="text" id="editContact" placeholder="Contact Number" required>
+        <button type="submit">Update Profile</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="profile.js"></script>
+  <script>
+    // Show/hide edit form
+    const toggleBtn = document.getElementById("editToggleBtn");
+    const editForm = document.getElementById("editForm");
+
+    toggleBtn.addEventListener("click", () => {
+      editForm.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>

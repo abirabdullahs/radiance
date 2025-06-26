@@ -1,0 +1,389 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  padding-bottom: 70px; /* for footer spacing */
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Slider */
+.slider-section {
+  margin: 15px 0;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slide {
+  min-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  scroll-snap-align: start;
+  border-radius: 10px;
+}
+
+/* Section General */
+.section {
+  padding: 20px 15px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+/* Card */
+.card {
+  background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+  border: 1px solid #dcefff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.subject-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.subject-card i {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Hover effect */
+.subject-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Individual subject color themes */
+.subject-card.physics {
+  background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+  color: #0d47a1;
+}
+
+.subject-card.chemistry {
+  background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
+  color: #880e4f;
+}
+
+.subject-card.biology {
+  background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
+  color: #2e7d32;
+}
+
+.subject-card.math {
+  background: linear-gradient(to bottom right, #fff8e1, #ffe082);
+  color: #f57f17;
+}
+
+.subject-card.ict {
+  background: linear-gradient(to bottom right, #ede7f6, #d1c4e9);
+  color: #4527a0;
+}
+
+/* Overview Cards with Icons */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.overview-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #333;
+}
+
+.overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: white;
+}
+
+/* Specific Icon Styles */
+.icon-box.notes {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+}
+
+.icon-box.videos {
+  background: linear-gradient(135deg, #ef5350, #e53935);
+}
+
+.icon-box.suggestions {
+  background: linear-gradient(135deg, #ffca28, #fbc02d);
+  color: #333;
+}
+
+.icon-box.questions {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+/* Explore Section Styling */
+.explore-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fefefe;
+  border: 2px solid #e0e0e0;
+  border-left: 6px solid #1976d2;
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.explore-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.explore-card i {
+  font-size: 2rem;
+  color: #1976d2;
+  background-color: #e3f2fd;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.explore-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.explore-desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Optional Responsive */
+@media (max-width: 800px) {
+  .explore-card {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .explore-title {
+    font-size: 1rem;
+  }
+
+  .explore-desc {
+    font-size: 0.85rem;
+  }
+}
+
+/* Instructor */
+.teacher-info {
+  padding: 30px 20px;
+}
+
+.teacher-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 5px solid #1976d2;
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.teacher-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid #1976d2;
+}
+
+.teacher-details {
+  flex: 1;
+}
+
+.teacher-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #0d47a1;
+  margin-bottom: 5px;
+}
+
+.teacher-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.teacher-dept {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Responsive fix */
+@media (max-width: 500px) {
+  .teacher-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .teacher-photo {
+    margin: 0 0 15px 0;
+  }
+}
+
+/* Footer Menu (Like Mobile App) */
+.footer-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.menu-item i {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #1976d2;
+}
+
+.menu-item:hover {
+  color: #0d47a1;
+}
+
+/* Responsive Fixes */
+@media (max-width: 500px) {
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    font-size: 0.9rem;
+  }
+
+  .menu-item i {
+    font-size: 1rem;
+  }
+}

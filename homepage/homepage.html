@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Radiance</title> <!-- Font Awesome CDN for icons --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+  <link rel="stylesheet" href="homepage.css"> 
+ </head> 
+ <body> <!-- Navbar --> 
+  <nav class="navbar"> 
+   <div class="logo">
+  <img src="../radiance logo.png" class="logo" alt="Radiance Logo" />
+   </div> 
+   <img src="../student profile.png" alt="Profile" class="profile-pic" onclick="goToProfile()"> 
+  </nav> <!-- Header Slider --> 
+  <header class="slider-section"> 
+   <div class="slider"> 
+    <img src="../homepage header.jpg" class="slide active"> 
+    <img src="../homepage header.jpg" class="slide"> 
+    <img src="../homepage header.jpg" class="slide"> 
+   </div> 
+  </header> 
+  
+  <!-- overview -->
+  <section class="section">
+  <h2 class="section-title">Overview</h2>
+  <div class="overview-grid">
+    
+    <div class="overview-card">
+      <div class="icon-box notes"><i class="fas fa-pen"></i></div>
+      <p>Notes: 120+</p>
+    </div>
+    
+    <div class="overview-card">
+      <div class="icon-box videos"><i class="fas fa-video"></i></div>
+      <p>Videos: 50+</p>
+    </div>
+    
+    <div class="overview-card">
+      <div class="icon-box suggestions"><i class="fas fa-lightbulb"></i></div>
+      <p>Suggestions: 30+</p>
+    </div>
+    
+    <div class="overview-card">
+      <div class="icon-box questions"><i class="fas fa-book-open"></i></div>
+      <p>QB Questions: 500+</p>
+    </div>
+    
+  </div>
+</section>
+  
+  <!-- Subject Section --> 
+ <section class="section">
+ <h2 class="section-title">Choose Subject</h2>
+ <div class="subject-grid">
+
+  <div class="subject-card physics">
+   <i class="fas fa-atom"></i>
+   <span>Physics</span>
+  </div>
+
+  <div class="subject-card chemistry">
+   <i class="fas fa-vial"></i>
+   <span>Chemistry</span>
+  </div>
+
+  <div class="subject-card biology">
+   <i class="fas fa-dna"></i>
+   <span>Biology</span>
+  </div>
+
+  <div class="subject-card math">
+   <i class="fas fa-square-root-alt"></i>
+   <span>Math</span>
+  </div>
+
+  <div class="subject-card ict">
+   <i class="fas fa-desktop"></i>
+   <span>ICT</span>
+  </div>
+
+ </div>
+</section>
+
+  
+  
+   <!-- Explore Section --> 
+  <section class="section">
+ <h2 class="section-title">Explore</h2>
+
+ <div class="explore-card">
+  <i class="fas fa-atom"></i>
+  <div class="explore-content">
+   <span class="explore-title">Periodic Table</span>
+   <span class="explore-desc">Explore all elements interactively</span>
+  </div>
+ </div>
+
+ <div class="explore-card">
+  <i class="fas fa-robot"></i>
+  <div class="explore-content">
+   <span class="explore-title">Chat With AI</span>
+   <span class="explore-desc">Ask questions &amp; get instant help</span>
+  </div>
+ </div>
+
+ <div class="explore-card">
+  <i class="fas fa-brain"></i>
+  <div class="explore-content">
+   <span class="explore-title">MCQ Test</span>
+   <span class="explore-desc">Practice with smart quizzes</span>
+  </div>
+ </div>
+
+ <div class="explore-card">
+  <i class="fas fa-book-open"></i>
+  <div class="explore-content">
+   <span class="explore-title">Question Bank</span>
+   <span class="explore-desc">Review board questions with answers</span>
+  </div>
+ </div>
+</section>
+
+  <section class="section teacher-info">
+  <div class="teacher-card">
+    <a href="../profile/profile.html"><img src="profile.jpg" alt="Instructor Photo" class="teacher-photo"></a>
+    <div class="teacher-details">
+      <h3 class="teacher-name">MD Abir Hossen Abdullah</h3>
+      <p class="teacher-title">Instructor &amp; Mentor</p>
+      <p class="teacher-dept">Department of CSE, BUET</p>
+    </div>
+  </div>
+</section>
+
+   <!-- Footer Section --> 
+  <footer class="footer-menu"> 
+   <div class="menu-item"> <i class="fas fa-home"></i><span>Home</span> 
+   </div> 
+   <div class="menu-item"> <i class="fas fa-book"></i><span>Courses</span> 
+   </div> 
+   <div class="menu-item"> <i class="fas fa-comments"></i><span>Discuss</span> 
+   </div> 
+   <a href="../profile/profile.html">
+   <div class="menu-item"> <i class="fas fa-user"></i><span>Profile</span> 
+   </div> </a>
+   <div class="menu-item"> <i class="fas fa-bars"></i><span>Menu</span> 
+   </div> 
+  </footer> 
+  <script src="homepage.js"></script> 
+ 
+</body></html>

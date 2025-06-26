@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup | Radiance</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div class="signup-box">
+    <!-- 🔰 Radiance Logo Placeholder -->
+    <img src="../radiance logo.png" alt="Radiance Logo" class="logo" />
+    <h2>Create Your Account</h2>
+
+    <form id="signupForm">
+      <input type="text" id="name" placeholder=" Full Name" required>
+      <input type="text" id="institute" placeholder=" Institute Name" required>
+
+      <select id="batch" required>
+        <option value=""> Select your Batch</option>
+        <option value="2024">HSC 2026</option>
+        <option value="2025">HSC 2027</option>
+        <option value="2026">SSC</option>
+      </select>
+
+      <input type="text" id="contact" placeholder=" Contact Number" required>
+      <input type="email" id="email" placeholder=" Email Address" required>
+      <input type="password" id="password" placeholder=" Password" required>
+      <input type="password" id="confirmPassword" placeholder=" Confirm Password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="../login/login.html">Login here</a></p>
+  </div>
+
+  <script type="module" src="signup.js"></script>
+</body>
+</html>

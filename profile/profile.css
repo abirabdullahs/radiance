@@ -1,0 +1,119 @@
+/* style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1c1f4a, #2d9cdb);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.profile-box {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #1c1f4a;
+  margin-bottom: 20px;
+}
+
+#profileData p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+  text-align: left;
+}
+
+form {
+  margin-top: 20px;
+  text-align: left;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2d9cdb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #207fb7;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: #1c1f4a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #151839;
+}
+
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .profile-box {
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  #profileData p {
+    font-size: 14px;
+  }
+
+  form input, form select, form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
