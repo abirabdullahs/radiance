@@ -25,26 +25,6 @@ const slides = document.querySelectorAll('.slide');
       });
     });
 
- document.addEventListener('DOMContentLoaded', function() {
-    const startButton = document.getElementById('startNowButton');
-
-    if (startButton) {
-        startButton.addEventListener('click', function() {
-            // Change 'your-other-file.html' to the actual name of your file
-            window.location.href = '/login/login.html';
-        });
-    }
-});
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/service-worker.js")
-      .then((reg) => console.log("✅ Service Worker registered", reg))
-      .catch((err) => console.error("❌ Service Worker error", err));
-  });
-}
-
 // Firebase v8 CDN scripts for auth check
 const firebaseAppScript = document.createElement('script');
 firebaseAppScript.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js';

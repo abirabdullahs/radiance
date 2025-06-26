@@ -1,0 +1,92 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #eaf1ff 0%, #f4f8fb 100%);
+}
+.teacher-chat-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #fff;
+}
+.teacher-chat-title {
+  color: #0044cc;
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0 1rem 0;
+}
+.teacher-chat-box {
+  flex: 1 1 auto;
+  background: #f7faff;
+  border-radius: 14px;
+  margin: 0 1rem 0.5rem 1rem;
+  padding: 1.1rem 0.7rem;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0,68,204,0.06);
+}
+.teacher-msg {
+  margin: 0.7rem 0;
+  display: flex;
+}
+.teacher-msg.user { justify-content: flex-end; }
+.teacher-msg.teacher { justify-content: flex-start; }
+.teacher-bubble {
+  padding: 0.85rem 1.3rem;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(0,68,204,0.07);
+}
+.teacher-msg.user .teacher-bubble {
+  background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+  color: #fff;
+}
+.teacher-msg.teacher .teacher-bubble {
+  background: #eaf1ff;
+  color: #0044cc;
+}
+.teacher-chat-input-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid #e0e7ef;
+}
+.teacher-chat-input {
+  flex: 1 1 auto;
+  font-size: 1.1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 18px;
+  border: 1px solid #c7d7ef;
+  margin-right: 0.7rem;
+  outline: none;
+}
+.teacher-chat-send {
+  background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding: 0.7rem 1.7rem;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px #0044cc22;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.teacher-chat-send:hover {
+  background: linear-gradient(90deg, #3a8dde 60%, #0044cc 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 600px) {
+  .teacher-chat-title { font-size: 1.2rem; }
+  .teacher-chat-box { margin: 0 0.2rem 0.2rem 0.2rem; padding: 0.5rem 0.2rem; }
+  .teacher-chat-input-row { padding: 0.5rem; }
+  .teacher-chat-input { font-size: 1rem; padding: 0.5rem 0.7rem; }
+  .teacher-chat-send { font-size: 1rem; padding: 0.5rem 1rem; }
+}

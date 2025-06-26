@@ -124,6 +124,11 @@
         <span class="explore-desc">Review board questions with answers</span>
       </div>
     </div>
+    <a href="/chat-with-teacher/chat-with-teacher.html" class="explore-card">
+      <img src="/teacher.png" alt="Chat With Teacher" class="explore-img">
+      <div class="explore-title">Chat With Teacher</div>
+      <div class="explore-desc">Send your questions directly to the teacher and get personal replies.</div>
+    </a>
   </section>
 
   <!-- Instructor -->
@@ -168,6 +173,13 @@
     }
   </style>
 
+  <!-- PWA Install Button -->
+  <div class="pwa-install-container">
+    <button class="pwa-install-btn" id="pwaInstallBtn">
+      <i data-lucide="download"></i> Install Radiance App
+    </button>
+  </div>
+
   <!-- Footer Section --> 
   <footer class="footer-menu"> 
    <div class="menu-item"> <i class="fas fa-home"></i><span>Home</span></div> 
@@ -183,13 +195,13 @@
 
   <div class="menu-container" id="menuContainer">
   <div class="sidebar">
-    <div class="top-section">
-      <div class="user-info">
-        <span id="user-name">Loading...</span>
-        <img src="/student profile.png" alt="Profile Picture" class="profile-pic">
+      <div class="top-section">
+        <div class="user-info">
+          <img src="/student profile.png" alt="Profile Picture" class="profile-pic">
+          <span id="user-name">Loading...</span>
+        </div>
+        <button class="view-profile" onclick="goToProfileFromMenu()">View Profile</button>
       </div>
-      <button class="view-profile" onclick="goToProfileFromMenu()">View Profile</button>
-    </div>
 
     <nav class="menu">
       <ul>
@@ -203,6 +215,7 @@
         <li onclick="handleMenuItemClick(this, '/study-materials/study-materials.html')"><i data-lucide="book"></i> Study Materials</li>
         <li onclick="handleMenuItemClick(this, '/notifications/notifications.html')"><i data-lucide="bell"></i> Notifications</li>
         <li onclick="handleMenuItemClick(this, '/chat-with-ai/chat-with-ai.html')"><i data-lucide="bot"></i> Chat With AI</li>
+        <li onclick="handleMenuItemClick(this, '/chat-with-teacher/chat-with-teacher.html')"><i data-lucide="user-check"></i> Chat With Teacher</li>
       </ul>
       <hr class="menu-divider">
       <div class="suggested">
@@ -218,12 +231,16 @@
     </nav>
 
     <div class="bottom-section">
-      <button class="logout" onclick="logout()">Logout</button>
+      <div class="sidebar-logout">
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
     </div>
   </div>
 </div>
 <div class="overlay" id="overlay"></div>
 
+  <!-- Floating PWA Install Button -->
+  <button id="pwa-install-btn" class="pwa-install-btn">Install App</button>
 
   <!-- Scripts -->
   <script src="homepage.js"></script>

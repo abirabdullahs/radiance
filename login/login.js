@@ -46,7 +46,7 @@ form.addEventListener('submit', async (e) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
     showModal("Login successful!", "success");
-    window.location.href = "/homepage/homepage.html";
+    window.location.replace("/homepage/homepage.html"); // Use replace to prevent back navigation
 
   } catch (error) {
     console.error("Login Error:", error);

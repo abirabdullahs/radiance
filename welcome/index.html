@@ -35,13 +35,6 @@
   <div class="some-container">
     <button class="start-btn" id="startNowButton">Start Now</button>
   </div>
-  <div class="subject-links">
-    <a href="/physics/physics.html" class="subject-card">Physics</a>
-    <a href="/chemistry/chemistry.html" class="subject-card">Chemistry</a>
-    <a href="/biology/biology.html" class="subject-card">Biology</a>
-    <a href="/math/math.html" class="subject-card">Math</a>
-    <a href="/ict/ict.html" class="subject-card">ICT</a>
-  </div>
   <div class="dots"> 
    <div class="dot active"></div> 
    <div class="dot"></div> 
@@ -156,32 +149,6 @@
       transform: translateY(-2px) scale(1.04);
       box-shadow: 0 4px 16px #0044cc33;
     }
-    .subject-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.1rem;
-      margin: 1.2rem 0 0.5rem 0;
-    }
-    .subject-card {
-      display: inline-block;
-      background: linear-gradient(90deg, #eaf1ff 60%, #f4f8fb 100%);
-      color: #0044cc;
-      font-weight: 700;
-      font-size: 1.08rem;
-      padding: 0.85rem 1.7rem;
-      border-radius: 18px;
-      box-shadow: 0 2px 8px #0044cc11;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-      margin-bottom: 0.2rem;
-    }
-    .subject-card:hover {
-      background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
-      color: #fff;
-      transform: translateY(-2px) scale(1.04);
-      box-shadow: 0 4px 16px #0044cc33;
-    }
     @media (max-width: 600px) {
       .slider {
         max-width: 100vw;
@@ -205,15 +172,6 @@
       }
       .dots {
         margin: 1.5rem 0 1.5rem 0;
-      }
-      .subject-links {
-        gap: 0.5rem;
-        margin: 0.7rem 0 0.2rem 0;
-      }
-      .subject-card {
-        font-size: 0.97rem;
-        padding: 0.6rem 1.1rem;
-        border-radius: 12px;
       }
     }
   </style>

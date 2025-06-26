@@ -111,6 +111,34 @@ body {
 .ai-chat-send:hover {
   background: linear-gradient(90deg, #3a8dde 60%, #0044cc 100%);
 }
+.ai-clear-btn {
+  display: block;
+  margin: 0.5rem auto 0.5rem auto;
+  background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px #0044cc22;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.ai-clear-btn:hover {
+  background: linear-gradient(90deg, #3a8dde 60%, #0044cc 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+.ai-msg.typing .ai-bubble {
+  font-style: italic;
+  color: #888;
+  background: #eaf1ff;
+  animation: typing-blink 1s infinite alternate;
+}
+@keyframes typing-blink {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
 @media (max-width: 600px) {
   .ai-chat-container.fullscreen {
     padding: 0;

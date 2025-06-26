@@ -264,6 +264,13 @@ a {
   border-radius: 50%;
 }
 
+.explore-card .explore-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
 .explore-content {
   display: flex;
   flex-direction: column;
@@ -410,13 +417,29 @@ a {
 
 .user-info {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 0.4rem;
+  object-fit: cover;
+  border: 2px solid #eaf1ff;
 }
 
 #user-name {
-  font-weight: 600;
-  font-size: 1.1rem;
+  display: block;
+  font-size: 1.08rem;
+  color: #0044cc;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .view-profile {
@@ -479,17 +502,62 @@ a {
 
 .logout {
   width: 100%;
-  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem 0 1.2rem 0;
+  background: linear-gradient(90deg, #f4f8fb 60%, #eaf1ff 100%);
+  border-top: 1px solid #e0e7ef;
+  background: linear-gradient(90deg, #ff4b2b 60%, #ff416c 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding: 0.7rem 2.2rem;
   border: none;
-  background-color: #dc3545;
-  color: white;
-  border-radius: 8px;
+  border-radius: 22px;
+  box-shadow: 0 2px 8px #ff4b2b22;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 1px;
 }
 
 .logout:hover {
-  background-color: #b02a37;
+  background: linear-gradient(90deg, #ff416c 60%, #ff4b2b 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px #ff4b2b33;
+}
+
+/* ======== PWA Install Button ======== */
+.pwa-install-btn {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  padding: 14px 28px;
+  background: #0044cc;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.pwa-install-btn:hover, .pwa-install-btn:focus {
+  background: #003399;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+}
+@media (max-width: 600px) {
+  .pwa-install-btn {
+    padding: 12px 18px;
+    font-size: 1rem;
+    bottom: 16px;
+    right: 16px;
+  }
 }
 
 /* ======== Responsive Fixes ======== */
