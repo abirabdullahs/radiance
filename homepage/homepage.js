@@ -27,75 +27,64 @@ function goToProfileFromMenu() {
 
 // ✅ Sidebar toggle
 function toggleMenu() {
-  const menu = document.getElementById("menuContainer");
-  const overlay = document.getElementById("overlay");
-
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// Ensure menu toggle works even if called before DOMContentLoaded
-window.toggleMenu = function() {
-  const menu = document.getElementById("menuContainer");
-  const overlay = document.getElementById("overlay");
+  const menu = document.getElementById('menuContainer');
+  const overlay = document.getElementById('overlay');
   if (menu && overlay) {
-    menu.classList.toggle("active");
-    overlay.classList.toggle("active");
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
   }
-};
-
-// ✅ Click outside to close sidebar
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("overlay");
-  if (overlay) {
-    overlay.addEventListener("click", () => {
-      const menu = document.getElementById("menuContainer");
-      menu && menu.classList.remove("active");
-      overlay.classList.remove("active");
-    });
-  }
-});
-
-// ✅ Menu item click highlight
-function handleMenuItemClick(el, link) {
-  document.querySelectorAll(".menu li, .suggested li").forEach(item =>
-    item.classList.remove("active-menu-item")
-  );
-  el.classList.add("active-menu-item");
-  window.location.href = link;
 }
 
-// ✅ Wait for DOM to load
-document.addEventListener("DOMContentLoaded", () => {
+// Sidebar menu item click handler
+function handleMenuItemClick(el, url) {
+  document.querySelectorAll('.menu li, .suggested li').forEach(li => li.classList.remove('active-menu-item'));
+  el.classList.add('active-menu-item');
+  window.location.href = url;
+}
 
-  // ✅ Logout functionality
-  const logoutBtn = document.getElementById("logoutBtn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-      firebase.auth().signOut().then(() => {
-        window.location.href = "/login/login.html";
-      }).catch(error => {
-        console.error("Logout failed:", error);
-        showModal("Logout failed!", "error");
-      });
-    });
+// Expose functions to window for inline HTML onclick
+window.toggleMenu = toggleMenu;
+window.handleMenuItemClick = handleMenuItemClick;
+window.goToProfile = goToProfile;
+window.goToProfileFromMenu = goToProfileFromMenu;
+
+// Ensure all event listeners are set after DOM is loaded
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Overlay click closes menu
+  const overlay = document.getElementById('overlay');
+  if (overlay) {
+    overlay.onclick = () => {
+      const menu = document.getElementById('menuContainer');
+      if (menu) menu.classList.remove('active');
+      overlay.classList.remove('active');
+    };
   }
 
   // Set user name in sidebar if available
-  const nameSpan = document.getElementById("user-name");
+  const nameSpan = document.getElementById('user-name');
   if (nameSpan) {
-    // Example: Replace with actual user name logic
     const userName = localStorage.getItem('userName') || 'Student';
     nameSpan.textContent = userName;
   }
 
+  // Logout button
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      firebase.auth().signOut().then(() => {
+        window.location.href = '/login/login.html';
+      }).catch(error => {
+        console.error('Logout failed:', error);
+        showModal('Logout failed!', 'error');
+      });
+    });
+  }
 });
 
 // Add this at the end of homepage.js to handle sidebar/logout button
 function logout() {
-  // Clear user session (example: localStorage, Firebase, etc.)
-  localStorage.removeItem('userName');
-  // If using Firebase Auth, add: firebase.auth().signOut();
+  localStorage.removeItem('loggedIn');
   window.location.href = '/login/login.html';
 }
 window.logout = logout;
@@ -125,32 +114,30 @@ onAuthStateChanged(auth, (user) => {
 
 // PWA Install Button Logic
 let deferredPrompt;
-const installBtn = document.getElementById('pwa-install-btn');
+const installBtn = document.getElementById('pwaInstallBtn');
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent the mini-infobar from appearing on mobile
   e.preventDefault();
   deferredPrompt = e;
-  if (installBtn) installBtn.style.display = 'block';
 });
 
 if (installBtn) {
+  installBtn.style.display = 'block'; // Always show the button
   installBtn.addEventListener('click', async () => {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       if (outcome === 'accepted') {
         installBtn.textContent = 'App Installed!';
-        setTimeout(() => installBtn.style.display = 'none', 2000);
-      } else {
-        installBtn.textContent = 'Install App';
+        setTimeout(() => installBtn.textContent = 'Install Radiance App', 2000);
       }
       deferredPrompt = null;
+    } else {
+      alert('PWA install is not supported on your browser.');
     }
   });
 }
 
-// Hide button if already installed
 window.addEventListener('appinstalled', () => {
-  if (installBtn) installBtn.style.display = 'none';
+  if (installBtn) installBtn.textContent = 'Installed!';
 });

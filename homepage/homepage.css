@@ -300,6 +300,7 @@ a {
   padding: 8px 0;
   z-index: 1000;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+  margin-top: 0 !important;
 }
 
 .menu-item {
@@ -324,6 +325,7 @@ a {
 /* ======== Instructor Section ======== */
 .teacher-info {
   padding: 30px 20px;
+  margin-bottom: 32px; /* More space below teacher section */
 }
 
 .teacher-card {
@@ -360,6 +362,26 @@ a {
   font-size: 1.3rem;
   font-weight: bold;
   color: #0d47a1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.teacher-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 2px 8px 2px 6px;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.teacher-badge i {
+  color: #43a047;
+  font-size: 1rem;
+  margin-left: 3px;
 }
 
 .teacher-title {
@@ -376,10 +398,11 @@ a {
 .menu-container {
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 80%;
-  max-width: 300px;
+  right: -350px;
+  left: auto;
   height: 100vh;
+  width: 350px;
+  max-width: 90vw;
   background-color: #ffffff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   z-index: 10000;
@@ -413,6 +436,8 @@ a {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 }
 
 .user-info {
@@ -497,59 +522,69 @@ a {
 }
 
 .bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.sidebar-logout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px; /* Added margin to give space below logout button */
 }
 
 .logout {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  padding: 1.2rem 0 1.2rem 0;
-  background: linear-gradient(90deg, #f4f8fb 60%, #eaf1ff 100%);
-  border-top: 1px solid #e0e7ef;
-  background: linear-gradient(90deg, #ff4b2b 60%, #ff416c 100%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.08rem;
-  padding: 0.7rem 2.2rem;
-  border: none;
-  border-radius: 22px;
-  box-shadow: 0 2px 8px #ff4b2b22;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  letter-spacing: 1px;
-}
-
-.logout:hover {
-  background: linear-gradient(90deg, #ff416c 60%, #ff4b2b 100%);
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 16px #ff4b2b33;
-}
-
-/* ======== PWA Install Button ======== */
-.pwa-install-btn {
-  display: none;
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 1000;
-  padding: 14px 28px;
-  background: #0044cc;
+  width: 90%;
+  padding: 12px 0;
+  background: #e53935;
   color: #fff;
   border: none;
-  border-radius: 32px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+  box-shadow: none;
+  position: static;
+  letter-spacing: 1px;
 }
-.pwa-install-btn:hover, .pwa-install-btn:focus {
-  background: #003399;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+.logout:hover {
+  background: #b71c1c;
+}
+
+/* ======== PWA Install Button ======== */
+.pwa-install-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 32px auto;
+  max-width: 500px;
+}
+.pwa-install-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  transition: background 0.2s;
+}
+.pwa-install-btn:hover {
+  background: #0044cc;
 }
 @media (max-width: 600px) {
   .pwa-install-btn {
