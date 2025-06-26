@@ -1,0 +1,6 @@
+body { background: #f7faff; }
+.uc-icon { font-size: 4rem; color: #0044cc; margin-bottom: 1rem; }
+.uc-title { font-size: 2rem; color: #0044cc; margin-bottom: 0.5rem; }
+.uc-desc { color: #333; font-size: 1.1rem; margin-bottom: 2rem; }
+.uc-btn { background: #0044cc; color: #fff; border: none; border-radius: 8px; padding: 0.7rem 1.5rem; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+.uc-btn:hover { background: #3a8dde; }

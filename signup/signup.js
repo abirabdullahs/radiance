@@ -1,10 +1,17 @@
-// script.js
+// signup.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// TODO: নিচের firebaseConfig টা তোমার Firebase Console → Project Settings → SDK থেকে copy করে বসাও
+// 🔹 Your Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAKbOTdzFjILtll5ucz0_BrAtZAZW0IdkA",
   authDomain: "abirabdullah-radiance.firebaseapp.com",
@@ -15,12 +22,12 @@ const firebaseConfig = {
   measurementId: "G-TJP2B88Q63"
 };
 
-// Initialize Firebase
+// 🔹 Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Signup form submission
+// 🔹 Handle signup form
 const form = document.getElementById('signupForm');
 
 form.addEventListener('submit', async (e) => {
@@ -35,30 +42,30 @@ form.addEventListener('submit', async (e) => {
   const confirmPassword = document.getElementById('confirmPassword').value;
 
   if (password !== confirmPassword) {
-    alert("Passwords do not match!");
+    showModal("Passwords do not match!", "error");
     return;
   }
 
   try {
-  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-  const user = userCredential.user;
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-  await setDoc(doc(db, "users", user.uid), {
-    name,
-    institute,
-    batch,
-    contact,
-    email,
-    createdAt: new Date()
-  });
+    await setDoc(doc(db, "users", user.uid), {
+      name,
+      institute,
+      batch,
+      contact,
+      email,
+      createdAt: new Date()
+    });
 
-  await sendEmailVerification(user);
-  alert("Signup successful! A verification email has been sent. Please verify your email before logging in.");
-  window.location.href = "../login/login.html"; // Only this redirect is needed
+    await sendEmailVerification(user);
 
-} catch (error) {
-  console.error(error);
-  alert("Signup failed: " + error.message);
-}
+    showModal("Signup successful! A verification email has been sent. Please verify your email before logging in.", "success");
+    window.location.href = "/login/login.html";
 
+  } catch (error) {
+    console.error("Signup Error:", error);
+    showModal("Signup failed: " + error.message, "error");
+  }
 });

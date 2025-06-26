@@ -1,15 +1,19 @@
-/* General Reset */
+/* ======== General Reset ======== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #fefefe;
   color: #333;
-  padding-bottom: 70px; /* for footer spacing */
+  padding-bottom: 70px;
   line-height: 1.5;
 }
 
@@ -18,7 +22,7 @@ a {
   color: inherit;
 }
 
-/* Navbar */
+/* ======== Navbar ======== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,11 +33,12 @@ a {
   position: sticky;
   top: 0;
   z-index: 999;
+  height: 100px;
 }
 
 .logo {
   width: 150px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   max-width: 100%;
   height: auto;
 }
@@ -46,7 +51,7 @@ a {
   object-fit: cover;
 }
 
-/* Slider */
+/* ======== Slider ======== */
 .slider-section {
   margin: 15px 0;
 }
@@ -66,7 +71,7 @@ a {
   border-radius: 10px;
 }
 
-/* Section General */
+/* ======== Sections ======== */
 .section {
   padding: 20px 15px;
 }
@@ -84,7 +89,7 @@ a {
   gap: 15px;
 }
 
-/* Card */
+/* ======== Cards ======== */
 .card {
   background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
   border: 1px solid #dcefff;
@@ -103,63 +108,94 @@ a {
 }
 
 .subject-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .subject-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Baloo 2', 'Roboto', Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  min-width: 90px;
+  min-height: 110px;
+  margin: 0.5rem;
+  border: 2px solid #e0e7ef;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,68,204,0.09);
+  padding: 1.1rem 0.7rem 0.7rem 0.7rem;
+  transition: transform 0.13s, box-shadow 0.13s;
+  position: relative;
+}
+
+.subject-card.physics { background: linear-gradient(135deg, #4f8cff 60%, #a1c4fd 100%); }
+.subject-card.chemistry { background: linear-gradient(135deg, #ff7e5f 60%, #feb47b 100%); }
+.subject-card.biology { background: linear-gradient(135deg, #43e97b 60%, #38f9d7 100%); }
+.subject-card.math { background: linear-gradient(135deg, #f7971e 60%, #ffd200 100%); color: #222; }
+.subject-card.ict { background: linear-gradient(135deg, #7f53ac 60%, #647dee 100%); }
+
+.subject-card span {
+  margin-top: 0.3rem;
   font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  color: inherit;
 }
 
 .subject-card i {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  display: block;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 8px #0044cc22;
 }
 
-/* Hover effect */
-.subject-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.subject-card.math i { color: #f7971e; background: #fff3e0; }
+.subject-card.biology i { color: #43e97b; background: #e0fff3; }
+.subject-card.chemistry i { color: #ff7e5f; background: #fff0e0; }
+.subject-card.physics i { color: #4f8cff; background: #e0f0ff; }
+.subject-card.ict i { color: #7f53ac; background: #f3e0ff; }
+
+/* --- Attractive Card Styles for Homepage --- */
+.overview-card, .explore-card {
+  background: linear-gradient(120deg, #eaf1ff 60%, #f4f8fb 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,68,204,0.09);
+  padding: 1.2rem 1rem 1rem 1rem;
+  margin: 0.5rem 0;
+  transition: transform 0.13s, box-shadow 0.13s;
+  border: 2px solid #e0e7ef;
+  position: relative;
+}
+.overview-card:hover, .subject-card:hover, .explore-card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(0,68,204,0.16);
+  border-color: #3a8dde;
+  cursor: pointer;
+}
+.icon-box {
+  background: linear-gradient(135deg, #0044cc 60%, #3a8dde 100%);
+  color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 8px #0044cc22;
 }
 
-/* Individual subject color themes */
-.subject-card.physics {
-  background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
-  color: #0d47a1;
-}
-
-.subject-card.chemistry {
-  background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
-  color: #880e4f;
-}
-
-.subject-card.biology {
-  background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
-  color: #2e7d32;
-}
-
-.subject-card.math {
-  background: linear-gradient(to bottom right, #fff8e1, #ffe082);
-  color: #f57f17;
-}
-
-.subject-card.ict {
-  background: linear-gradient(to bottom right, #ede7f6, #d1c4e9);
-  color: #4527a0;
-}
-
-/* Overview Cards with Icons */
+/* ======== Overview Cards ======== */
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -194,25 +230,12 @@ a {
   color: white;
 }
 
-/* Specific Icon Styles */
-.icon-box.notes {
-  background: linear-gradient(135deg, #42a5f5, #1e88e5);
-}
+.icon-box.notes { background: linear-gradient(135deg, #42a5f5, #1e88e5); }
+.icon-box.videos { background: linear-gradient(135deg, #ef5350, #e53935); }
+.icon-box.suggestions { background: linear-gradient(135deg, #ffca28, #fbc02d); color: #333; }
+.icon-box.questions { background: linear-gradient(135deg, #66bb6a, #43a047); }
 
-.icon-box.videos {
-  background: linear-gradient(135deg, #ef5350, #e53935);
-}
-
-.icon-box.suggestions {
-  background: linear-gradient(135deg, #ffca28, #fbc02d);
-  color: #333;
-}
-
-.icon-box.questions {
-  background: linear-gradient(135deg, #66bb6a, #43a047);
-}
-
-/* Explore Section Styling */
+/* ======== Explore Section ======== */
 .explore-card {
   display: flex;
   align-items: center;
@@ -257,23 +280,41 @@ a {
   color: #555;
 }
 
-/* Optional Responsive */
-@media (max-width: 800px) {
-  .explore-card {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .explore-title {
-    font-size: 1rem;
-  }
-
-  .explore-desc {
-    font-size: 0.85rem;
-  }
+/* ======== Footer Menu ======== */
+.footer-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
 }
 
-/* Instructor */
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.menu-item i {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #1976d2;
+}
+
+.menu-item:hover {
+  color: #0d47a1;
+}
+
+/* ======== Instructor Section ======== */
 .teacher-info {
   padding: 30px 20px;
 }
@@ -312,14 +353,11 @@ a {
   font-size: 1.3rem;
   font-weight: bold;
   color: #0d47a1;
-  margin-bottom: 5px;
 }
 
 .teacher-title {
   font-size: 1rem;
-  font-weight: 500;
   color: #555;
-  margin-bottom: 3px;
 }
 
 .teacher-dept {
@@ -327,8 +365,140 @@ a {
   color: #666;
 }
 
-/* Responsive fix */
-@media (max-width: 500px) {
+/* ======== Sidebar Menu ======== */
+.menu-container {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.menu-container.active {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#user-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.view-profile {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-profile:hover {
+  background-color: #0056b3;
+}
+
+.menu ul, .suggested ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.menu li, .suggested li {
+  padding: 12px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.menu li:hover, .suggested li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu li.active-menu-item, .suggested li.active-menu-item {
+  background-color: #e0f0ff;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.menu li:not(:last-child), .suggested li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.menu-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+.bottom-section {
+  margin-top: auto;
+}
+
+.logout {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout:hover {
+  background-color: #b02a37;
+}
+
+/* ======== Responsive Fixes ======== */
+@media (max-width: 800px) {
+  .explore-card {
+    flex-direction: column;
+    padding: 15px;
+  }
+
   .teacher-card {
     flex-direction: column;
     text-align: center;
@@ -337,53 +507,43 @@ a {
   .teacher-photo {
     margin: 0 0 15px 0;
   }
+
+  .menu-container {
+    width: 85%;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
 }
 
-/* Footer Menu (Like Mobile App) */
-.footer-menu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #ddd;
-  display: flex;
-  justify-content: space-around;
-  padding: 8px 0;
-  z-index: 1000;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+@media (max-width: 700px) {
+  .overview-grid, .subject-grid { flex-direction: column; gap: 0.5rem; }
+  .overview-card, .subject-card, .explore-card {
+    padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+    border-radius: 12px;
+    min-width: unset;
+    min-height: unset;
+  }
+  .icon-box, .subject-card i, .explore-card i {
+    width: 36px; height: 36px; font-size: 1.1rem;
+  }
+  .explore-card i { font-size: 1.3rem; min-width: 36px; min-height: 36px; }
+  .explore-title { font-size: 1rem; }
+  .subject-card { min-width: 70px; min-height: 70px; }
 }
 
-.menu-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.75rem;
-  color: #444;
-  transition: color 0.3s;
-}
-
-.menu-item i {
-  font-size: 1.2rem;
-  margin-bottom: 4px;
-  color: #1976d2;
-}
-
-.menu-item:hover {
-  color: #0d47a1;
-}
-
-/* Responsive Fixes */
 @media (max-width: 500px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .logo {
+    width: 120px;
+    margin: 10px 0;
+  }
+
   .section-title {
     font-size: 1.1rem;
-  }
-
-  .card {
-    font-size: 0.9rem;
-  }
-
-  .menu-item i {
-    font-size: 1rem;
   }
 }

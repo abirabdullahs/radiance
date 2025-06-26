@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Periodic Table | Radiance</title>
+  <link rel="stylesheet" href="periodic-table.css">
+  <link rel="stylesheet" href="/modal.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0044cc">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <script src="/modal.js"></script>
+</head>
+<body>
+  <nav class="pt-navbar">
+    <a href="/homepage/homepage.html" class="pt-logo">Radiance</a>
+    <span class="pt-title">Interactive Periodic Table</span>
+  </nav>
+  <main>
+    <div class="periodic-table" id="periodicTable"></div>
+    <div class="pt-lanth-actin-labels">
+      <span class="pt-lanth-label">* Lanthanides</span>
+      <span class="pt-actin-label">** Actinides</span>
+    </div>
+    <div class="periodic-table-row" id="lanthanideRow"></div>
+    <div class="periodic-table-row" id="actinideRow"></div>
+    <div id="elementModal" class="pt-modal" style="display:none;">
+      <div class="pt-modal-content" id="modalContent"></div>
+      <button class="pt-modal-close" onclick="closeElementModal()">Close</button>
+    </div>
+  </main>
+  <script src="periodic-table.js"></script>
+</body>
+</html>

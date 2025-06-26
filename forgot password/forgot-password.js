@@ -22,9 +22,9 @@ document.getElementById("resetForm").addEventListener("submit", async (e) => {
 
   try {
     await sendPasswordResetEmail(auth, email);
-    alert("Reset link sent! Please check your email.");
+    showModal("Reset link sent! Please check your email.", "success");
   } catch (err) {
     console.error(err);
-    alert("Error: " + err.message);
+    showModal("Error: " + err.message, "error");
   }
 });

@@ -5,11 +5,15 @@
   <title>User Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="/modal.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0044cc">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
 </head>
 <body>
   <div class="container">
     <div class="profile-box">
-      <img src="../radiance logo.png" class="logo" alt="Radiance Logo" />
+      <img src="/radiance logo.png" class="logo" alt="Radiance Logo" />
       <h2>Your Profile</h2>
       <div id="profileData">
         <p><strong>Name:</strong> <span id="pName"></span></p>
@@ -26,9 +30,10 @@
         <input type="text" id="editInstitute" placeholder="Institute" required>
         <select id="editBatch" required>
           <option value="">Select Batch</option>
-          <option value="2024">2024</option>
-          <option value="2025">2025</option>
-          <option value="2026">2026</option>
+          <option value="2026">HSC 2026</option>
+          <option value="2027">HSC 2027</option>
+          <option value="SSC">SSC</option>
+          <option value="Medical">Medical</option>
         </select>
         <input type="text" id="editContact" placeholder="Contact Number" required>
         <button type="submit">Update Profile</button>
@@ -37,6 +42,7 @@
   </div>
 
   <script type="module" src="profile.js"></script>
+  <script src="/modal.js"></script>
   <script>
     // Show/hide edit form
     const toggleBtn = document.getElementById("editToggleBtn");

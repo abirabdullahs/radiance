@@ -1,0 +1,6 @@
+/* Group Chat Stylish CSS */
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f8fb; margin: 0; }
+.chat-container { max-width: 500px; margin: 2rem auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,68,204,0.08); padding: 2rem; }
+h1 { color: #0044cc; text-align: center; }
+.chat-box { background: #eaf1ff; border-radius: 8px; min-height: 200px; margin-bottom: 1rem; padding: 1rem; }
+@media (max-width: 600px) { .chat-container { padding: 1rem; } }

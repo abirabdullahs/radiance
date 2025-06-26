@@ -1,0 +1,13 @@
+/* Discuss Stylish CSS */
+body { font-family: 'Roboto', 'Baloo 2', Arial, sans-serif; background: #f4f8fb; margin: 0; }
+.discuss-container { max-width: 500px; margin: 2.5rem auto; background: #fff; border-radius: 22px; box-shadow: 0 8px 32px rgba(0,68,204,0.13); padding: 2.2rem 1.2rem 1.2rem 1.2rem; display: flex; flex-direction: column; border: 2px solid #e0e7ef; }
+h1 { color: #0044cc; text-align: center; font-family: 'Baloo 2', 'Roboto', Arial, sans-serif; font-size: 2.1rem; letter-spacing: 1px; margin-bottom: 1.2rem; }
+.discuss-desc { color: #555; text-align: center; margin-bottom: 1.2rem; }
+.discuss-form { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.2rem; }
+.discuss-input { resize: vertical; min-height: 60px; max-height: 180px; border-radius: 10px; border: 1.5px solid #c3dafe; font-size: 1.08rem; font-family: 'Roboto', 'Baloo 2', Arial, sans-serif; background: #f7faff; padding: 0.85rem; transition: border 0.2s; }
+.discuss-input:focus { border: 1.5px solid #0044cc; outline: none; }
+.discuss-send { background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%); color: #fff; border: none; border-radius: 10px; padding: 0.7rem 1.7rem; font-size: 1.08rem; font-family: 'Roboto', Arial, sans-serif; cursor: pointer; font-weight: 700; box-shadow: 0 2px 8px rgba(0,68,204,0.07); transition: background 0.2s; align-self: flex-end; }
+.discuss-send:hover { background: linear-gradient(90deg, #003399 60%, #0044cc 100%); }
+.discuss-messages { margin-top: 1.2rem; }
+.discuss-msg { background: #eaf1ff; border-radius: 14px; margin: 0.7rem 0; padding: 1rem 1.2rem; color: #1a237e; font-family: 'Baloo 2', 'Roboto', Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,68,204,0.07); word-break: break-word; }
+@media (max-width: 600px) { .discuss-container { padding: 1rem 0.2rem; } h1 { font-size: 1.3rem; } .discuss-msg { font-size: 0.98rem; padding: 0.7rem 0.7rem; } }

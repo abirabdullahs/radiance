@@ -1,0 +1,103 @@
+/* Chat With AI Stylish CSS */
+body {
+  font-family: 'Roboto', 'Baloo 2', Arial, sans-serif;
+  background: linear-gradient(135deg, #eaf1ff 0%, #f4f8fb 100%);
+  margin: 0;
+}
+.ai-chat-container {
+  max-width: 500px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,68,204,0.13);
+  padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #e0e7ef;
+}
+.ai-title {
+  font-family: 'Baloo 2', 'Roboto', Arial, sans-serif;
+  color: #0044cc;
+  text-align: center;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+}
+.ai-chat-box {
+  background: #f7faff;
+  border-radius: 14px;
+  min-height: 220px;
+  margin-bottom: 1.2rem;
+  padding: 1.1rem 0.7rem;
+  overflow-y: auto;
+  max-height: 320px;
+  box-shadow: 0 2px 8px rgba(0,68,204,0.06);
+}
+.ai-msg {
+  margin: 0.7rem 0;
+  display: flex;
+  font-family: 'Roboto', 'Baloo 2', Arial, sans-serif;
+}
+.ai-msg.user { justify-content: flex-end; }
+.ai-msg.ai { justify-content: flex-start; }
+.ai-bubble {
+  padding: 0.85rem 1.3rem;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 1.08rem;
+  font-family: 'Roboto', 'Baloo 2', Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0,68,204,0.07);
+  word-break: break-word;
+}
+.ai-msg.user .ai-bubble {
+  background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.ai-msg.ai .ai-bubble {
+  background: linear-gradient(90deg, #eaf1ff 60%, #d0e6ff 100%);
+  color: #1a237e;
+  border-bottom-left-radius: 6px;
+  font-family: 'Baloo 2', 'Roboto', Arial, sans-serif;
+}
+.ai-chat-input-row {
+  display: flex;
+  gap: 0.7rem;
+}
+.ai-chat-input {
+  flex: 1;
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: 1.5px solid #c3dafe;
+  font-size: 1.08rem;
+  font-family: 'Roboto', 'Baloo 2', Arial, sans-serif;
+  background: #f7faff;
+  transition: border 0.2s;
+}
+.ai-chat-input:focus {
+  border: 1.5px solid #0044cc;
+  outline: none;
+}
+.ai-chat-send {
+  background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0 1.7rem;
+  font-size: 1.08rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,68,204,0.07);
+  transition: background 0.2s;
+}
+.ai-chat-send:hover {
+  background: linear-gradient(90deg, #003399 60%, #0044cc 100%);
+}
+@media (max-width: 600px) {
+  .ai-chat-container { padding: 1rem 0.2rem; }
+  .ai-title { font-size: 1.3rem; }
+  .ai-chat-box { max-height: 180px; }
+  .ai-bubble { font-size: 0.98rem; padding: 0.7rem 0.7rem; }
+}

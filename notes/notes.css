@@ -1,0 +1,7 @@
+/* Notes Stylish CSS */
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f8fb; margin: 0; }
+.notes-container { max-width: 700px; margin: 2rem auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,68,204,0.08); padding: 2rem; }
+h1 { color: #0044cc; text-align: center; }
+.notes-list { list-style: none; padding: 0; }
+.notes-list li { background: #eaf1ff; margin: 0.5rem 0; padding: 1rem; border-radius: 8px; color: #222; }
+@media (max-width: 600px) { .notes-container { padding: 1rem; } }

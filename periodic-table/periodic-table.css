@@ -1,0 +1,285 @@
+/* Interactive Periodic Table Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f8fb;
+  color: #222;
+}
+.pt-navbar {
+  display: flex;
+  align-items: center;
+  background: #0044cc;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.pt-logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1.5rem;
+}
+.pt-title {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(60px, 1fr));
+  gap: 10px;
+  max-width: 100vw;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  justify-items: center;
+}
+.pt-element {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  border: 2px solid #e0e7ef;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+  position: relative;
+  font-size: 1.12rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.pt-element:hover {
+  transform: scale(1.10);
+  box-shadow: 0 6px 24px rgba(0,68,204,0.16);
+  border-color: #0044cc;
+}
+.pt-symbol {
+  margin: 0 0 8px 0 !important;
+  padding: 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+.pt-number {
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #555;
+  font-weight: 600;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  z-index: 2;
+}
+.pt-name {
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #444;
+  font-size: 0.85rem;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 2;
+}
+.pt-alkali-metal, .pt-alkaline-earth-metal, .pt-transition-metal, .pt-post-transition-metal, .pt-metalloid, .pt-nonmetal, .pt-halogen, .pt-noble-gas, .pt-lanthanide, .pt-actinide {
+  background: #fff !important;
+  border-color: #e0e7ef !important;
+}
+
+/* --- Restore color themes for element categories --- */
+.pt-alkali-metal {
+  background: #ffe082 !important; /* Soft yellow */
+  border-color: #ffd54f !important;
+}
+.pt-alkaline-earth-metal {
+  background: #b2ffb2 !important; /* Light green */
+  border-color: #81c784 !important;
+}
+.pt-transition-metal {
+  background: #b3e5fc !important; /* Light blue */
+  border-color: #4fc3f7 !important;
+}
+.pt-post-transition-metal {
+  background: #e1bee7 !important; /* Lavender */
+  border-color: #ba68c8 !important;
+}
+.pt-metalloid {
+  background: #fff9c4 !important; /* Pale yellow */
+  border-color: #fff176 !important;
+}
+.pt-nonmetal {
+  background: #f8bbd0 !important; /* Light pink */
+  border-color: #f06292 !important;
+}
+.pt-halogen {
+  background: #c8e6c9 !important; /* Mint green */
+  border-color: #66bb6a !important;
+}
+.pt-noble-gas {
+  background: #d1c4e9 !important; /* Soft purple */
+  border-color: #9575cd !important;
+}
+.pt-lanthanide {
+  background: #ffe0b2 !important; /* Peach */
+  border-color: #ffb74d !important;
+}
+.pt-actinide {
+  background: #bcaaa4 !important; /* Taupe */
+  border-color: #8d6e63 !important;
+}
+
+/* Modal styles are in modal.css */
+.pt-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s;
+}
+.pt-modal.active {
+  display: flex !important;
+}
+.pt-modal-content {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 24px 20px 24px;
+  min-width: 220px;
+  max-width: 92vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  text-align: center;
+  z-index: 1;
+  word-break: break-word;
+  animation: popUp 0.22s cubic-bezier(.4,1.6,.6,1);
+}
+.pt-modal-close {
+  margin-top: 18px;
+  background: #0044cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pt-modal-close:hover {
+  background: #003399;
+}
+@keyframes popUp {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@media (max-width: 700px) {
+  .periodic-table {
+    grid-template-columns: repeat(9, minmax(60px, 1fr));
+    gap: 6px;
+  }
+  .pt-element {
+    width: 60px;
+    height: 60px;
+    font-size: 0.98rem;
+    border-radius: 10px;
+  }
+  .pt-symbol {
+    font-size: 1.2rem;
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+  }
+  .pt-number {
+    top: 5px;
+    left: 6px;
+    font-size: 0.8rem;
+  }
+  .pt-name {
+    font-size: 0.7rem;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+}
+@media (max-width: 700px) and (orientation: landscape) {
+  .periodic-table {
+    grid-template-columns: repeat(18, minmax(32px, 1fr));
+    gap: 4px;
+  }
+  .pt-element {
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+    border-radius: 7px;
+  }
+  .pt-symbol {
+    font-size: 0.9rem;
+    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+  }
+  .pt-number {
+    top: 2px;
+    left: 3px;
+    font-size: 0.6rem;
+  }
+  .pt-name {
+    font-size: 0.5rem;
+  }
+}
+
+/* --- Lanthanide and Actinide Rows --- */
+.periodic-table-row {
+  display: grid;
+  grid-template-columns: repeat(15, minmax(60px, 1fr));
+  gap: 10px;
+  max-width: 100vw;
+  margin: 0.5rem auto 1.5rem auto;
+  padding: 0 1rem;
+  justify-items: center;
+}
+.pt-lanth-actin-labels {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-left: 2.5rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+  color: #888;
+}
+.pt-lanth-label::before { content: '* '; }
+.pt-actin-label::before { content: '** '; }
+
+/* --- More spacing between element texts --- */
+.pt-number {
+  margin-bottom: 8px !important;
+}
+.pt-symbol {
+  margin-bottom: 8px !important;
+  margin-top: 8px !important;
+}
+.pt-name {
+  margin-top: 8px !important;
+}
+@media (max-width: 700px) {
+  .periodic-table-row {
+    grid-template-columns: repeat(15, minmax(32px, 1fr));
+    gap: 4px;
+  }
+  .pt-lanth-actin-labels {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .pt-number, .pt-symbol, .pt-name {
+    margin-bottom: 4px !important;
+    margin-top: 4px !important;
+  }
+}

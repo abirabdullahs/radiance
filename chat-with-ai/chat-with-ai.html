@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat With AI | Radiance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="chat-with-ai.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="ai-chat-container">
+    <h1 class="ai-title">Chat With AI</h1>
+    <div class="ai-chat-box" id="aiChatBox"></div>
+    <form class="ai-chat-input-row" id="aiChatForm">
+      <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="Type your message... / আপনার বার্তা লিখুন..." autocomplete="off" required />
+      <button type="submit" class="ai-chat-send">Send</button>
+    </form>
+  </div>
+  <script>
+    // Simple frontend-only AI bot logic
+    const chatBox = document.getElementById('aiChatBox');
+    const chatForm = document.getElementById('aiChatForm');
+    const chatInput = document.getElementById('aiChatInput');
+
+    function appendMsg(text, sender) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'ai-msg ' + sender;
+      const bubble = document.createElement('div');
+      bubble.className = 'ai-bubble';
+      bubble.textContent = text;
+      msgDiv.appendChild(bubble);
+      chatBox.appendChild(msgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    chatForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const userMsg = chatInput.value.trim();
+      if (!userMsg) return;
+      appendMsg(userMsg, 'user');
+      chatInput.value = '';
+      setTimeout(() => {
+        // Simple Bengali/English keyword-based response
+        let reply = '';
+        const msg = userMsg.toLowerCase();
+        if (msg.includes('hello') || msg.includes('hi') || msg.includes('হ্যালো')) {
+          reply = 'হ্যালো! কিভাবে সাহায্য করতে পারি?';
+        } else if (msg.includes('tumake ke') || msg.includes('তুমাকে কে') || msg.includes('who are you')) {
+          reply = 'আমি Ali, Radiance AI chat bot!';
+        } else if (msg.includes('thanks') || msg.includes('ধন্যবাদ')) {
+          reply = 'আপনাকেও ধন্যবাদ!';
+        } else if (msg.includes('help') || msg.includes('help me') || msg.includes('সাহায্য')) {
+          reply = 'আপনি কী বিষয়ে সাহায্য চান?';
+        } else if (msg.includes('bye') || msg.includes('goodbye') || msg.includes('বিদায়')) {
+          reply = 'বিদায়! আবার দেখা হবে!';
+        } else {
+          reply = 'দুঃখিত, আমি এখনো শিখছি! অন্য কিছু জিজ্ঞাসা করুন।';
+        }
+        appendMsg(reply, 'ai');
+      }, 600);
+    });
+  </script>
+</body>
+</html>

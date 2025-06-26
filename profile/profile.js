@@ -39,11 +39,11 @@ onAuthStateChanged(auth, async (user) => {
       document.getElementById('editContact').value = data.contact;
 
     } else {
-      alert("No profile data found.");
+      showModal("No profile data found.", "error");
     }
   } else {
     // Not logged in
-    window.location.href = "index.html";
+    window.location.href = "/login/login.html";
   }
 });
 
@@ -63,17 +63,50 @@ document.getElementById('editForm').addEventListener('submit', async (e) => {
     if (!user) throw new Error("User not logged in");
 
     await setDoc(doc(db, "users", user.uid), updatedData, { merge: true });
-    alert("Profile updated!");
+    showModal("Profile updated!", "success");
     location.reload(); // reload page to see updated info
   } catch (err) {
     console.error("Update failed:", err);
-    alert("Failed to update profile: " + err.message);
+    showModal("Failed to update profile: " + err.message, "error");
   }
 });
 
-// Logout button handler
-document.getElementById('logoutBtn').addEventListener('click', () => {
-  signOut(auth).then(() => {
-    window.location.href = "index.html";
-  });
-});
+// Add logout button dynamically if not present and attach handler
+function ensureLogoutButton() {
+  let logoutBtn = document.getElementById('logoutBtn');
+  if (!logoutBtn) {
+    logoutBtn = document.createElement('button');
+    logoutBtn.id = 'logoutBtn';
+    logoutBtn.textContent = 'Logout';
+    document.querySelector('.profile-box').appendChild(logoutBtn);
+  }
+  logoutBtn.onclick = () => {
+    signOut(auth).then(() => {
+      window.location.href = "/login/login.html";
+    });
+  };
+}
+
+// Ensure logout button after DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', ensureLogoutButton);
+} else {
+  ensureLogoutButton();
+}
+
+// showModal function for beautiful alerts
+function showModal(message, type) {
+  const modal = document.createElement('div');
+  modal.className = `modal ${type}`;
+  modal.textContent = message;
+  document.body.appendChild(modal);
+  setTimeout(() => {
+    modal.classList.add('show');
+  }, 100);
+  setTimeout(() => {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      document.body.removeChild(modal);
+    }, 300);
+  }, 3000);
+}

@@ -1,6 +1,12 @@
 // login.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getAuth,
+  setPersistence,
+  browserLocalPersistence,
+  signInWithEmailAndPassword,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 // 🔹 Your Firebase config
 const firebaseConfig = {
@@ -17,6 +23,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// 🔹 Redirect if already logged in
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.href = "/homepage/homepage.html";
+  }
+});
+
 // 🔹 Handle login form
 const form = document.getElementById('loginForm');
 
@@ -27,14 +40,26 @@ form.addEventListener('submit', async (e) => {
   const password = document.getElementById('loginPassword').value;
 
   try {
+    // 🔹 Set session persistence
+    await setPersistence(auth, browserLocalPersistence);
+
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
-    // 🔹 No email verification check needed
-    alert("Login successful!");
-    window.location.href = "../homepage/homepage.html"; // redirect to profile page
+    showModal("Login successful!", "success");
+    window.location.href = "/homepage/homepage.html";
 
   } catch (error) {
     console.error("Login Error:", error);
-    alert("Login failed: " + error.message);
+    let msg = "Login failed. Please try again.";
+    if (error.code === "auth/wrong-password") {
+      msg = "Wrong password. Please try again!";
+    } else if (error.code === "auth/user-not-found") {
+      msg = "No account found with this email.";
+    } else if (error.code === "auth/too-many-requests") {
+      msg = "Too many failed attempts. Please try again later or reset your password.";
+    } else if (error.code === "auth/invalid-email") {
+      msg = "Invalid email address.";
+    }
+    showModal(msg, "error");
   }
 });
