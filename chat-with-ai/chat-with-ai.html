@@ -7,17 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="chat-with-ai.css">
   <link rel="manifest" href="/manifest.json">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <div class="ai-chat-container">
+  <div class="ai-chat-container fullscreen">
     <h1 class="ai-title">Chat With AI</h1>
     <div class="ai-chat-box" id="aiChatBox"></div>
     <form class="ai-chat-input-row" id="aiChatForm">
       <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="Type your message... / আপনার বার্তা লিখুন..." autocomplete="off" required />
-      <button type="submit" class="ai-chat-send">Send</button>
+      <button type="submit" class="ai-chat-send" aria-label="Send"><i data-lucide="send"></i></button>
     </form>
   </div>
   <script>
+    lucide.createIcons();
     // Simple frontend-only AI bot logic
     const chatBox = document.getElementById('aiChatBox');
     const chatForm = document.getElementById('aiChatForm');

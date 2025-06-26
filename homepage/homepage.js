@@ -52,14 +52,6 @@ function handleMenuItemClick(el, link) {
 // ✅ Wait for DOM to load
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ✅ Subject cards redirect
-  const cards = document.querySelectorAll('.subject-card');
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      window.location.href = '/under construction.html';
-    });
-  });
-
   // ✅ Show logged-in user's name in sidebar
   const nameSpan = document.getElementById("user-name");
   if (nameSpan && window.firebase && firebase.auth) {

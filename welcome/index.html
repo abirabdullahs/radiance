@@ -12,54 +12,211 @@
  <body> 
   <div class="slider"> 
    <div class="slide active"> 
-    <img src="/homepage header.jpg" alt="Slide 1"> 
-    <div class="headline">
-     Headline One
-    </div> 
-    <div class="details">
-     Short detail line one.
-     <br>Another line below.
-    </div> 
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Slide 1" class="slide-img"> 
+    <div class="headline">Welcome to Radiance</div> 
+    <div class="details">Your journey to mastering science starts here.<br>Learn, explore, and shine bright!</div> 
    </div> 
    <div class="slide"> 
-    <img src="/homepage header.jpg" alt="Slide 2"> 
-    <div class="headline">
-     Headline Two
-    </div> 
-    <div class="details">
-     Second slide content here.
-     <br>Additional text.
-    </div> 
+    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Slide 2" class="slide-img"> 
+    <div class="headline">Interactive Learning</div> 
+    <div class="details">Engage with interactive tools, quizzes, and a smart AI mentor.<br>Study smarter, not harder.</div> 
    </div> 
    <div class="slide"> 
-    <img src="/homepage header.jpg" alt="Slide 3"> 
-    <div class="headline">
-     Headline Three
-    </div> 
-    <div class="details">
-     More information here.
-     <br>Continue scrolling.
-    </div> 
+    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80" alt="Slide 3" class="slide-img"> 
+    <div class="headline">Expert Guidance</div> 
+    <div class="details">Learn from top educators and Olympiad trainers.<br>Get support every step of the way.</div> 
    </div> 
    <div class="slide"> 
-    <img src="/homepage header.jpg" alt="Slide 4"> 
-    <div class="headline">
-     Headline Four
-    </div> 
-    <div class="details">
-     Final slide content.
-     <br>Wrap up info.
-    </div> 
+    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=800&q=80" alt="Slide 4" class="slide-img"> 
+    <div class="headline">Join the Community</div> 
+    <div class="details">Collaborate, discuss, and grow with peers.<br>Radiance is your learning family.</div> 
    </div> 
   </div> 
+  <div class="some-container">
+    <button class="start-btn" id="startNowButton">Start Now</button>
+  </div>
+  <div class="subject-links">
+    <a href="/physics/physics.html" class="subject-card">Physics</a>
+    <a href="/chemistry/chemistry.html" class="subject-card">Chemistry</a>
+    <a href="/biology/biology.html" class="subject-card">Biology</a>
+    <a href="/math/math.html" class="subject-card">Math</a>
+    <a href="/ict/ict.html" class="subject-card">ICT</a>
+  </div>
   <div class="dots"> 
    <div class="dot active"></div> 
    <div class="dot"></div> 
    <div class="dot"></div> 
    <div class="dot"></div> 
-  <div class="some-container">
-    <button class="start-btn" id="startNowButton">Start Now</button>
-</div>
+  </div>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #eaf1ff 0%, #f4f8fb 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .slider {
+      width: 100vw;
+      max-width: 430px;
+      margin: 2.2rem auto 0.5rem auto;
+      border-radius: 22px;
+      background: none;
+      box-shadow: none;
+      overflow: visible;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      padding: 0;
+      background: none;
+    }
+    .slide.active { display: flex; }
+    .slide-img {
+      width: 100vw;
+      max-width: 430px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 22px 22px 0 0;
+      margin-bottom: 0.7rem;
+      box-shadow: 0 4px 24px #0044cc11;
+      border-bottom: 3px solid #0044cc22;
+    }
+    .headline {
+      font-size: 1.45rem;
+      color: #0044cc;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      font-family: 'Baloo 2', Arial, sans-serif;
+      letter-spacing: 0.5px;
+      margin-top: 0.2rem;
+      background: none;
+    }
+    .details {
+      color: #222;
+      font-size: 1.05rem;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.1px;
+      background: none;
+    }
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 2.2rem 0 2.2rem 0;
+    }
+    .dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #e0e7ef;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 4px #0044cc11;
+    }
+    .dot.active {
+      background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+      box-shadow: 0 2px 8px #0044cc33;
+    }
+    .some-container {
+      display: flex;
+      justify-content: center;
+      margin: 2.2rem 0 0.5rem 0;
+    }
+    .start-btn {
+      background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+      color: #fff;
+      font-size: 1.18rem;
+      font-weight: 700;
+      padding: 1rem 2.7rem;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 2px 12px #0044cc22;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 1px;
+      outline: none;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 8px #0044cc22;
+    }
+    .start-btn:hover {
+      background: linear-gradient(90deg, #3a8dde 60%, #0044cc 100%);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 4px 16px #0044cc33;
+    }
+    .subject-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.1rem;
+      margin: 1.2rem 0 0.5rem 0;
+    }
+    .subject-card {
+      display: inline-block;
+      background: linear-gradient(90deg, #eaf1ff 60%, #f4f8fb 100%);
+      color: #0044cc;
+      font-weight: 700;
+      font-size: 1.08rem;
+      padding: 0.85rem 1.7rem;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px #0044cc11;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      margin-bottom: 0.2rem;
+    }
+    .subject-card:hover {
+      background: linear-gradient(90deg, #0044cc 60%, #3a8dde 100%);
+      color: #fff;
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 4px 16px #0044cc33;
+    }
+    @media (max-width: 600px) {
+      .slider {
+        max-width: 100vw;
+        margin: 0.7rem auto 0.2rem auto;
+        border-radius: 10px;
+      }
+      .slide-img {
+        max-width: 100vw;
+        height: 110px;
+        border-radius: 10px 10px 0 0;
+      }
+      .headline {
+        font-size: 1.08rem;
+      }
+      .details {
+        font-size: 0.97rem;
+      }
+      .start-btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+      }
+      .dots {
+        margin: 1.5rem 0 1.5rem 0;
+      }
+      .subject-links {
+        gap: 0.5rem;
+        margin: 0.7rem 0 0.2rem 0;
+      }
+      .subject-card {
+        font-size: 0.97rem;
+        padding: 0.6rem 1.1rem;
+        border-radius: 12px;
+      }
+    }
+  </style>
 
   <script type="module" src="welcome.js"></script>
   
