@@ -6,17 +6,59 @@
   <title>Math Chapters | Radiance</title>
   <link rel="stylesheet" href="math.css">
   <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500;700&family=Poppins:wght@500;700&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="subject-container">
-    <h1>Math Chapters</h1>
-    <ul class="chapter-list">
-      <li>Chapter 1: Algebra</li>
-      <li>Chapter 2: Geometry</li>
-      <li>Chapter 3: Trigonometry</li>
-      <li>Chapter 4: Calculus</li>
-      <li>Chapter 5: Statistics</li>
-    </ul>
+    <h1 class="math-title"><i class="fas fa-square-root-alt"></i> Math Chapters</h1>
+    <div class="papers-wrapper">
+      <div class="paper-box first-paper-box">
+        <section class="paper-section first-paper">
+          <h2 class="paper-title"><span style="font-size:1.2em">📐</span> HSC Math 1st Paper <span class="paper-title-bn">(গণিত প্রথম পত্র)</span></h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card"><span class="chapter-bn">ম্যাট্রিক্স ও নির্ণায়ক</span><span class="chapter-en">Matrix and Determinant</span></div>
+            <div class="chapter-card"><span class="chapter-bn">ভেক্টর</span><span class="chapter-en">Vector</span></div>
+            <div class="chapter-card"><span class="chapter-bn">সরলরেখা</span><span class="chapter-en">Straight Line</span></div>
+            <div class="chapter-card"><span class="chapter-bn">বৃত্ত</span><span class="chapter-en">Circle</span></div>
+            <div class="chapter-card"><span class="chapter-bn">বিন্যাস ও সমাবেশ</span><span class="chapter-en">Permutation and Combination</span></div>
+            <div class="chapter-card"><span class="chapter-bn">ত্রিকোণমিতিক অনুপাত</span><span class="chapter-en">Trigonometric Ratio</span></div>
+            <div class="chapter-card"><span class="chapter-bn">সংযুক্ত কোনের ত্রিকোণমিতিক অনুপাত</span><span class="chapter-en">Trigonometric Ratio of Compound Angles</span></div>
+            <div class="chapter-card"><span class="chapter-bn">ফাংশন ও ফাংশনের লেখচিত্র</span><span class="chapter-en">Function and Graph</span></div>
+            <div class="chapter-card"><span class="chapter-bn">অন্তরীকরণ (ইন্টিগ্রেশন)</span><span class="chapter-en">Integration</span></div>
+            <div class="chapter-card"><span class="chapter-bn">যোগজীকরণ (ডিফারেনশিয়েশন)</span><span class="chapter-en">Differentiation</span></div>
+          </div>
+        </section>
+      </div>
+      <div class="paper-box second-paper-box">
+        <section class="paper-section second-paper">
+          <h2 class="paper-title"><span style="font-size:1.2em">📏</span> HSC Math 2nd Paper <span class="paper-title-bn">(গণিত দ্বিতীয় পত্র)</span></h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card"><span class="chapter-bn">বাস্তব সংখ্যা ও অসমতা</span><span class="chapter-en">Real Number and Inequality</span></div>
+            <div class="chapter-card"><span class="chapter-bn">যোগাশ্রয়ী প্রোগ্রাম</span><span class="chapter-en">Linear Programming</span></div>
+            <div class="chapter-card"><span class="chapter-bn">জটিল সংখ্যা</span><span class="chapter-en">Complex Number</span></div>
+            <div class="chapter-card"><span class="chapter-bn">বহুপদী ও বহুপদী সমীকরণ</span><span class="chapter-en">Polynomial and Polynomial Equation</span></div>
+            <div class="chapter-card"><span class="chapter-bn">দ্বিপদী বিস্তৃতি</span><span class="chapter-en">Binomial Expansion</span></div>
+            <div class="chapter-card"><span class="chapter-bn">কণিক</span><span class="chapter-en">Conic</span></div>
+            <div class="chapter-card"><span class="chapter-bn">বিপরীত ত্রিকোণমিতিক ফাংশন ও ত্রিকোণমিতিক সমীকরণ</span><span class="chapter-en">Inverse Trigonometric Function and Trigonometric Equation</span></div>
+            <div class="chapter-card"><span class="chapter-bn">স্থিতিবিদ্যা</span><span class="chapter-en">Statics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">সমতলে বস্তুকণার গতি</span><span class="chapter-en">Motion of Particle in Plane</span></div>
+            <div class="chapter-card"><span class="chapter-bn">বিস্তার পরিমাপ ও সম্ভাবনা</span><span class="chapter-en">Measure of Dispersion and Probability</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
+  <footer class="footer-menu">
+    <div class="menu-item" onclick="window.location.href='/homepage/homepage.html'"><i class="fas fa-home"></i><span>Home</span></div>
+    <div class="menu-item" onclick="window.location.href='/courses/courses.html'"><i class="fas fa-book"></i><span>Courses</span></div>
+    <div class="menu-item" onclick="window.location.href='/discuss/discuss.html'"><i class="fas fa-comments"></i><span>Discuss</span></div>
+    <a href="/profile/profile.html">
+      <div class="menu-item"> <i class="fas fa-user"></i><span>Profile</span></div>
+    </a>
+    <div class="menu-item" onclick="window.toggleMenu && window.toggleMenu()">
+      <i class="fas fa-bars"></i><span>Menu</span>
+    </div>
+  </footer>
 </body>
 </html>

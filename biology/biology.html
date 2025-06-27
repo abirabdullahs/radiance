@@ -6,17 +6,58 @@
   <title>Biology Chapters | Radiance</title>
   <link rel="stylesheet" href="biology.css">
   <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500;700&family=Poppins:wght@500;700&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="subject-container">
-    <h1>Biology Chapters</h1>
-    <ul class="chapter-list">
-      <li>Chapter 1: Cell Biology</li>
-      <li>Chapter 2: Genetics</li>
-      <li>Chapter 3: Plant Physiology</li>
-      <li>Chapter 4: Human Physiology</li>
-      <li>Chapter 5: Ecology</li>
-    </ul>
+    <h1 class="bio-title"><i class="fas fa-dna"></i> Biology Chapters</h1>
+    <div class="papers-wrapper">
+      <div class="paper-box first-paper-box">
+        <section class="paper-section first-paper">
+          <h2 class="paper-title"><span style="font-size:1.2em">🧬</span> HSC Biology 1st Paper <span class="paper-title-bn">(জীববিজ্ঞান প্রথম পত্র)</span></h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card"><span class="chapter-bn">কোষ ও এর গঠন</span><span class="chapter-en">Cell and Its Structure</span></div>
+            <div class="chapter-card"><span class="chapter-bn">কোষ বিভাজন</span><span class="chapter-en">Cell Division</span></div>
+            <div class="chapter-card"><span class="chapter-bn">কোষ রসায়ন</span><span class="chapter-en">Cell Chemistry</span></div>
+            <div class="chapter-card"><span class="chapter-bn">অণুজীব</span><span class="chapter-en">Microorganisms</span></div>
+            <div class="chapter-card"><span class="chapter-bn">শৈবাল ও ছত্রাক</span><span class="chapter-en">Algae and Fungi</span></div>
+            <div class="chapter-card"><span class="chapter-bn">ব্রায়োফাইটা ও টেরেডোফাইটা</span><span class="chapter-en">Bryophyta and Pteridophyta</span></div>
+            <div class="chapter-card"><span class="chapter-bn">নগ্নবীজী ও আবৃতবীজী উদ্ভিদ</span><span class="chapter-en">Gymnosperms and Angiosperms</span></div>
+            <div class="chapter-card"><span class="chapter-bn">টিস্যু ও টিস্যুতন্ত্র</span><span class="chapter-en">Tissue and Tissue System</span></div>
+            <div class="chapter-card"><span class="chapter-bn">উদ্ভিদ শারীরতত্ত্ব</span><span class="chapter-en">Plant Physiology</span></div>
+            <div class="chapter-card"><span class="chapter-bn">উদ্ভিদ প্রজনন</span><span class="chapter-en">Plant Reproduction</span></div>
+            <div class="chapter-card"><span class="chapter-bn">জীবপ্রযুক্তি</span><span class="chapter-en">Biotechnology</span></div>
+          </div>
+        </section>
+      </div>
+      <div class="paper-box second-paper-box">
+        <section class="paper-section second-paper">
+          <h2 class="paper-title"><span style="font-size:1.2em">🧬</span> HSC Biology 2nd Paper <span class="paper-title-bn">(জীববিজ্ঞান দ্বিতীয় পত্র)</span></h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card"><span class="chapter-bn">প্রাণীর বিভিন্নতা ও শ্রেণিবিন্যাস</span><span class="chapter-en">Animal Diversity and Classification</span></div>
+            <div class="chapter-card"><span class="chapter-bn">প্রাণীর পরিচিতি</span><span class="chapter-en">Introduction to Animals</span></div>
+            <div class="chapter-card"><span class="chapter-bn">পরিপাক ও শোষণ</span><span class="chapter-en">Digestion and Absorption</span></div>
+            <div class="chapter-card"><span class="chapter-bn">রক্ত সঞ্চালন</span><span class="chapter-en">Blood Circulation</span></div>
+            <div class="chapter-card"><span class="chapter-bn">শ্বাসক্রিয়া ও শ্বসন</span><span class="chapter-en">Respiration and Breathing</span></div>
+            <div class="chapter-card"><span class="chapter-bn">বর্জ্য ও নিষ্কাশন</span><span class="chapter-en">Waste and Excretion</span></div>
+            <div class="chapter-card"><span class="chapter-bn">চলন ও অঙ্গচালনা</span><span class="chapter-en">Movement and Locomotion</span></div>
+            <div class="chapter-card"><span class="chapter-bn">সমন্বয় ও নিয়ন্ত্রণ</span><span class="chapter-en">Coordination and Control</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
+  <footer class="footer-menu">
+    <div class="menu-item" onclick="window.location.href='/homepage/homepage.html'"><i class="fas fa-home"></i><span>Home</span></div>
+    <div class="menu-item" onclick="window.location.href='/courses/courses.html'"><i class="fas fa-book"></i><span>Courses</span></div>
+    <div class="menu-item" onclick="window.location.href='/discuss/discuss.html'"><i class="fas fa-comments"></i><span>Discuss</span></div>
+    <a href="/profile/profile.html">
+      <div class="menu-item"> <i class="fas fa-user"></i><span>Profile</span></div>
+    </a>
+    <div class="menu-item" onclick="window.toggleMenu && window.toggleMenu()">
+      <i class="fas fa-bars"></i><span>Menu</span>
+    </div>
+  </footer>
 </body>
 </html>

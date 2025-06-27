@@ -1,7 +1,149 @@
-/* Subject Chapters Stylish CSS */
-body { font-family: 'Roboto', 'Baloo 2', Arial, sans-serif; background: #f4f8fb; margin: 0; }
-.subject-container { max-width: 500px; margin: 2.5rem auto; background: #fff; border-radius: 22px; box-shadow: 0 8px 32px rgba(0,68,204,0.13); padding: 2.2rem 1.2rem 1.2rem 1.2rem; display: flex; flex-direction: column; border: 2px solid #e0e7ef; }
-h1 { color: #0044cc; text-align: center; font-family: 'Baloo 2', 'Roboto', Arial, sans-serif; font-size: 2.1rem; letter-spacing: 1px; margin-bottom: 1.2rem; }
-.chapter-list { list-style: none; padding: 0; }
-.chapter-list li { background: #eaf1ff; border-radius: 10px; margin: 0.7rem 0; padding: 1rem 1.2rem; color: #1a237e; font-family: 'Baloo 2', 'Roboto', Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,68,204,0.07); word-break: break-word; font-size: 1.08rem; }
-@media (max-width: 600px) { .subject-container { padding: 1rem 0.2rem; } h1 { font-size: 1.3rem; } .chapter-list li { font-size: 0.98rem; padding: 0.7rem 0.7rem; } }
+/* Modern, attractive dark mode for Physics subject page */
+body {
+  background: #181c24;
+  color: #fff;
+  font-family: 'Poppins', 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+.subject-container {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  padding: 24px;
+  background: rgba(30,34,44,0.95);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+}
+.subject-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffb347;
+  text-shadow: 0 2px 8px #000a;
+}
+.papers-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+.paper-box {
+  background: #23283a;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px 0 #0006;
+  padding: 28px 24px 18px 24px;
+  min-width: 320px;
+  flex: 1 1 350px;
+  max-width: 420px;
+  margin-bottom: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-box:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 #000a;
+}
+.paper-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: #6be0ff;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.paper-title-bn {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-left: 6px;
+}
+.chapter-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.chapter-card {
+  background: linear-gradient(90deg, #2b3147 60%, #1e2230 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 #0005;
+  padding: 18px 20px 14px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, background 0.2s;
+  cursor: pointer;
+  border: 1.5px solid #ffb34733;
+}
+.chapter-card:hover {
+  background: linear-gradient(90deg, #ffb347 60%, #1e2230 100%);
+  box-shadow: 0 4px 16px 0 #ffb34755;
+}
+.chapter-bn {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.chapter-en {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  color: #b6eaff;
+  font-weight: 500;
+  margin-left: 2px;
+}
+/* Chemistry-style modern dark footer for Physics page (exact match) */
+/* ======== Footer Menu ======== */
+.footer-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #232526;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+  margin-top: 0 !important;
+}
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #e0e0e0;
+  transition: color 0.3s;
+}
+.menu-item i {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #ff7e5f;
+}
+
+@media (max-width: 900px) {
+  .papers-wrapper {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .subject-container {
+    padding: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .footer-menu {
+    font-size: 0.95rem;
+    padding: 0 0 0 0;
+  }
+  .menu-item {
+    font-size: 0.95rem;
+    padding: 8px 2px 4px 2px;
+    min-width: 44px;
+  }
+}

@@ -6,17 +6,60 @@
   <title>Physics Chapters | Radiance</title>
   <link rel="stylesheet" href="physics.css">
   <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500;700&family=Poppins:wght@500;700&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="subject-container">
     <h1>Physics Chapters</h1>
-    <ul class="chapter-list">
-      <li>Chapter 1: Motion</li>
-      <li>Chapter 2: Force</li>
-      <li>Chapter 3: Work, Power & Energy</li>
-      <li>Chapter 4: Waves & Sound</li>
-      <li>Chapter 5: Heat</li>
-    </ul>
+    <div class="papers-wrapper">
+      <div class="paper-box first-paper-box">
+        <section class="paper-section first-paper">
+          <h2 class="paper-title">১ম পত্র (1st Paper)</h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card"><span class="chapter-bn">ভৌত জগৎ ও পরিমাপ</span><span class="chapter-en">Physical World & Measurement</span></div>
+            <div class="chapter-card"><span class="chapter-bn">ভেক্টর</span><span class="chapter-en">Vector</span></div>
+            <div class="chapter-card"><span class="chapter-bn">গতিবিদ্যা</span><span class="chapter-en">Kinematics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">নিউটোনিয়ান বলবিদ্যা</span><span class="chapter-en">Newtonian Mechanics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">কাজ, শক্তি ও ক্ষমতা</span><span class="chapter-en">Work, Power & Energy</span></div>
+            <div class="chapter-card"><span class="chapter-bn">মহাকর্ষ ও অভিকর্ষ</span><span class="chapter-en">Gravitation & Attraction</span></div>
+            <div class="chapter-card"><span class="chapter-bn">পদার্থের গাঠনিক ধর্ম</span><span class="chapter-en">Properties of Matter</span></div>
+            <div class="chapter-card"><span class="chapter-bn">পর্যায়বৃত্ত গতি</span><span class="chapter-en">Periodic Motion</span></div>
+            <div class="chapter-card"><span class="chapter-bn">তরঙ্গ</span><span class="chapter-en">Waves</span></div>
+            <div class="chapter-card"><span class="chapter-bn">আদর্শ গ্যাস ও গ্যাসের গতিতত্ত্ব</span><span class="chapter-en">Ideal Gas & Kinetic Theory</span></div>
+          </div>
+        </section>
+      </div>
+      <div class="paper-box second-paper-box">
+        <section class="paper-section second-paper">
+          <h2 class="paper-title">২য় পত্র (2nd Paper)</h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card"><span class="chapter-bn">তাপগতিবিদ্যা</span><span class="chapter-en">Thermodynamics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">স্থির তড়িৎ</span><span class="chapter-en">Electrostatics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">চল তড়িৎ</span><span class="chapter-en">Current Electricity</span></div>
+            <div class="chapter-card"><span class="chapter-bn">তড়িৎ প্রবাহের চৌম্বক ক্রিয়া ও চৌম্বকত্ব</span><span class="chapter-en">Magnetic Effect of Current & Magnetism</span></div>
+            <div class="chapter-card"><span class="chapter-bn">তড়িৎ চৌম্বকীয় আবেশ ও পরিবর্তি প্রবাহ</span><span class="chapter-en">Electromagnetic Induction & Alternating Current</span></div>
+            <div class="chapter-card"><span class="chapter-bn">জ্যামিতিক আলোকবিজ্ঞান</span><span class="chapter-en">Geometrical Optics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">ভৌত আলোকবিজ্ঞান</span><span class="chapter-en">Physical Optics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">আধুনিক পদার্থবিজ্ঞ্যানের সূচনা</span><span class="chapter-en">Introduction to Modern Physics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">পরমাণুর মডেল ও নিউক্লিয়ার পদার্থবিজ্ঞান</span><span class="chapter-en">Atomic Model & Nuclear Physics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">সেমিকন্ডাক্টর ও ইলেকট্রনিক্স</span><span class="chapter-en">Semiconductor & Electronics</span></div>
+            <div class="chapter-card"><span class="chapter-bn">জ্যোতির্বিজ্ঞান</span><span class="chapter-en">Astronomy</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
+  <footer class="footer-menu">
+    <div class="menu-item" onclick="window.location.href='/homepage/homepage.html'"><i class="fas fa-home"></i><span>Home</span></div>
+    <div class="menu-item" onclick="window.location.href='/courses/courses.html'"><i class="fas fa-book"></i><span>Courses</span></div>
+    <div class="menu-item" onclick="window.location.href='/discuss/discuss.html'"><i class="fas fa-comments"></i><span>Discuss</span></div>
+    <a href="/profile/profile.html">
+      <div class="menu-item"> <i class="fas fa-user"></i><span>Profile</span></div>
+    </a>
+    <div class="menu-item" onclick="window.toggleMenu && window.toggleMenu()">
+      <i class="fas fa-bars"></i><span>Menu</span>
+    </div>
+  </footer>
 </body>
 </html>

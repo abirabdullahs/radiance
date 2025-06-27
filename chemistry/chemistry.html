@@ -6,17 +6,79 @@
   <title>Chemistry Chapters | Radiance</title>
   <link rel="stylesheet" href="chemistry.css">
   <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500;700&family=Poppins:wght@500;700&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="subject-container">
-    <h1>Chemistry Chapters</h1>
-    <ul class="chapter-list">
-      <li>Chapter 1: Atomic Structure</li>
-      <li>Chapter 2: Periodic Table</li>
-      <li>Chapter 3: Chemical Bonding</li>
-      <li>Chapter 4: Acids, Bases & Salts</li>
-      <li>Chapter 5: Organic Chemistry</li>
-    </ul>
+    <h1 class="chem-title"><i class="fas fa-flask"></i> Chemistry Chapters</h1>
+    <div class="papers-wrapper">
+      <div class="paper-box first-paper-box">
+        <section class="paper-section first-paper">
+          <h2 class="paper-title"><span style="font-size:1.2em">📘</span> HSC Chemistry 1st Paper <span class="paper-title-bn">(রসায়ন প্রথম পত্র)</span></h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card">
+              <span class="chapter-bn">ল্যাবরেটরির নিরাপদ ব্যবহার</span>
+              <span class="chapter-en">Safe Use of Laboratory</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">গুণগত রসায়ন</span>
+              <span class="chapter-en">Qualitative Chemistry</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">মৌলের পর্যায়বৃত্ত ধর্ম ও রাসায়নিক বন্ধন</span>
+              <span class="chapter-en">Periodic Properties & Chemical Bonding</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">রাসায়নিক পরিবর্তন</span>
+              <span class="chapter-en">Chemical Change</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">কর্মমুখী রসায়ন</span>
+              <span class="chapter-en">Applied Chemistry</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="paper-box second-paper-box">
+        <section class="paper-section second-paper">
+          <h2 class="paper-title"><span style="font-size:1.2em">📕</span> HSC Chemistry 2nd Paper <span class="paper-title-bn">(রসায়ন দ্বিতীয় পত্র)</span></h2>
+          <div class="chapter-card-grid">
+            <div class="chapter-card">
+              <span class="chapter-bn">পরিবেশ রসায়ন</span>
+              <span class="chapter-en">Environmental Chemistry</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">জৈব রসায়ন</span>
+              <span class="chapter-en">Organic Chemistry</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">পরিমাণগত রসায়ন</span>
+              <span class="chapter-en">Quantitative Chemistry</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">তড়িৎ রসায়ন</span>
+              <span class="chapter-en">Electrochemistry</span>
+            </div>
+            <div class="chapter-card">
+              <span class="chapter-bn">অর্থনৈতিক রসায়ন</span>
+              <span class="chapter-en">Industrial Chemistry</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
+  <footer class="footer-menu">
+    <div class="menu-item" onclick="window.location.href='/homepage/homepage.html'"><i class="fas fa-home"></i><span>Home</span></div>
+    <div class="menu-item" onclick="window.location.href='/courses/courses.html'"><i class="fas fa-book"></i><span>Courses</span></div>
+    <div class="menu-item" onclick="window.location.href='/discuss/discuss.html'"><i class="fas fa-comments"></i><span>Discuss</span></div>
+    <a href="/profile/profile.html">
+      <div class="menu-item"> <i class="fas fa-user"></i><span>Profile</span></div>
+    </a>
+    <div class="menu-item" onclick="window.toggleMenu && window.toggleMenu()">
+      <i class="fas fa-bars"></i><span>Menu</span>
+    </div>
+  </footer>
 </body>
 </html>

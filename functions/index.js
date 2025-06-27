@@ -4,8 +4,6 @@ const express = require("express");
 const cors = require("cors");
 admin.initializeApp();
 
-const db = admin.firestore();
-
 const app = express();
 app.use(cors({origin: true}));
 app.use(express.json());

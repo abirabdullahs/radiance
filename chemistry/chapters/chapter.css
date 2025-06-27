@@ -1,0 +1,308 @@
+/* Modern Chemistry Chapter Page Styles */
+
+body.dark-theme {
+  background: linear-gradient(135deg, #0a192f 0%, #1a1a2e 100%);
+  color: #e0e6ed;
+  font-family: 'Poppins', 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  transition: background 0.5s;
+}
+
+.chapter-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 12px 80px 12px;
+}
+
+.chapter-header {
+  text-align: center;
+  margin-bottom: 32px;
+  animation: fadeInDown 0.8s;
+}
+.chapter-header h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #64ffda;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.chapter-header .chapter-subtitle {
+  font-size: 1.1em;
+  color: #a0aec0;
+  font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
+}
+
+.chapter-bn, .chapter-header h1, .chapter-subtitle, .paper-title-bn, .chapter-card h2, .suggestion-list, .optional-list, .cq-question, .qna-item {
+  font-family: 'Noto Sans Bengali', 'Hind Siliguri', 'Poppins', sans-serif;
+}
+.chapter-header h1, .chapter-bn, .chapter-card h2, .paper-title-bn {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.chapter-header h1, .chapter-bn, .paper-title-bn {
+  color: #ffb86c;
+  text-shadow: 0 2px 8px #00eaff33;
+}
+.chapter-bn {
+  font-size: 1.18em;
+  display: block;
+  margin-bottom: 2px;
+}
+.chapter-card h2 {
+  font-family: 'Noto Sans Bengali', 'Hind Siliguri', 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #00eaff;
+  letter-spacing: 0.2px;
+}
+.qna-item, .cq-question, .suggestion-list li, .optional-list li {
+  font-family: 'Noto Sans Bengali', 'Hind Siliguri', 'Poppins', sans-serif;
+  font-size: 1.08em;
+  font-weight: 500;
+  color: #e0e6ed;
+}
+
+.chapter-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  animation: fadeIn 1.2s;
+}
+
+.chapter-card {
+  background: rgba(20, 30, 48, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);
+  padding: 28px 22px 22px 22px;
+  min-width: 270px;
+  max-width: 370px;
+  flex: 1 1 320px;
+  margin: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1.5px solid #233554;
+  position: relative;
+  overflow: hidden;
+}
+.chapter-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 #00eaff44;
+  border-color: #64ffda;
+}
+.chapter-card h2 {
+  font-size: 1.25em;
+  color: #00eaff;
+  margin-bottom: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chapter-summary {
+  color: #e0e6ed;
+  font-size: 1.05em;
+  margin-bottom: 0;
+}
+
+.video-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.video-player video {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  background: #111827;
+  box-shadow: 0 2px 12px #00eaff22;
+}
+.video-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 6px;
+}
+.segments {
+  color: #ffb86c;
+  font-size: 0.98em;
+}
+
+.notes-viewer iframe {
+  border: none;
+  border-radius: 8px;
+  background: #232946;
+  margin-bottom: 10px;
+}
+
+button.accent {
+  background: linear-gradient(90deg, #00eaff 0%, #64ffda 100%);
+  color: #0a192f;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #00eaff33;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-top: 4px;
+}
+button.accent:hover {
+  background: linear-gradient(90deg, #00c3ff 0%, #ffb86c 100%);
+  color: #232946;
+  box-shadow: 0 4px 16px #ffb86c44;
+}
+
+.suggestion-list, .optional-list {
+  padding-left: 18px;
+  color: #e0e6ed;
+  font-size: 1em;
+  margin: 0;
+}
+.suggestion-list li, .optional-list li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.cq-bank .cq-item {
+  background: #1a2636;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1em;
+}
+.cq-bank .difficulty {
+  font-size: 0.95em;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 2px 10px;
+  margin-right: 8px;
+  color: #fff;
+}
+.cq-bank .difficulty.easy { background: #00eaff; color: #0a192f; }
+.cq-bank .difficulty.medium { background: #ffb86c; color: #232946; }
+.cq-bank .difficulty.hard { background: #ff4c60; color: #fff; }
+
+.mcq-quiz {
+  margin-bottom: 8px;
+}
+.mcq-question {
+  color: #e0e6ed;
+  margin-bottom: 8px;
+}
+.mcq-options button {
+  background: #232946;
+  color: #00eaff;
+  border: 1.5px solid #00eaff;
+  border-radius: 6px;
+  margin: 0 4px 8px 0;
+  padding: 6px 14px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mcq-options button:hover {
+  background: #00eaff;
+  color: #232946;
+}
+.mcq-feedback {
+  color: #ffb86c;
+  font-size: 0.98em;
+  margin-top: 4px;
+}
+
+.qna-list .qna-item {
+  background: #1a2636;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  color: #e0e6ed;
+  font-size: 1em;
+}
+
+.practice-quiz {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.practice-quiz .progress {
+  color: #64ffda;
+  font-size: 1em;
+}
+
+@media (max-width: 700px) {
+  .chapter-cards {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .chapter-card {
+    max-width: 100%;
+    min-width: 0;
+    padding: 18px 8px 16px 8px;
+  }
+  .chapter-header h1 {
+    font-size: 1.3em;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: none; }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #233554;
+  border-radius: 8px;
+}
+
+/* Icon accent for navigation */
+.chapter-card h2 i, .chapter-header h1 i {
+  color: #ffb86c;
+  filter: drop-shadow(0 0 2px #00eaff);
+}
+
+/* Footer (if needed for consistency) */
+footer {
+  background: #0a192f;
+  color: #64ffda;
+  border-top: 1.5px solid #233554;
+  padding: 18px 0 10px 0;
+  text-align: center;
+  font-size: 1em;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 100;
+  box-shadow: 0 -2px 12px #00eaff22;
+}
+footer .menu-item {
+  display: inline-block;
+  margin: 0 18px;
+  color: #64ffda;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+footer .menu-item:hover {
+  color: #ffb86c;
+}
+footer .menu-item i {
+  margin-right: 6px;
+}
