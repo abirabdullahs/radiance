@@ -89,41 +89,43 @@
   </section>
 
   <!-- Explore Section -->
-  <section class="section">
+  <section class="section explore-section">
     <h2 class="section-title">Explore</h2>
-    <div class="explore-card" onclick="window.location.href='/periodic-table/periodic-table.html'">
-      <i class="fas fa-atom"></i>
-      <div class="explore-content">
-        <span class="explore-title">Periodic Table</span>
-        <span class="explore-desc">Explore all elements interactively</span>
+    <div class="explore-grid">
+      <div class="explore-card" onclick="window.location.href='/periodic-table/periodic-table.html'">
+        <i class="fas fa-atom"></i>
+        <div class="explore-content">
+          <span class="explore-title">Periodic Table</span>
+          <span class="explore-desc">Explore all elements interactively</span>
+        </div>
       </div>
-    </div>
-    <div class="explore-card" onclick="window.location.href='/chat-with-ai/chat-with-ai.html'">
-      <i class="fas fa-robot"></i>
-      <div class="explore-content">
-        <span class="explore-title">Chat With AI</span>
-        <span class="explore-desc">Ask questions & get instant help</span>
+      <div class="explore-card" onclick="window.location.href='/chat-with-ai/chat-with-ai.html'">
+        <i class="fas fa-robot"></i>
+        <div class="explore-content">
+          <span class="explore-title">Chat With AI</span>
+          <span class="explore-desc">Ask questions & get instant help</span>
+        </div>
       </div>
-    </div>
-    <div class="explore-card">
-      <i class="fas fa-brain"></i>
-      <div class="explore-content">
-        <span class="explore-title">MCQ Test</span>
-        <span class="explore-desc">Practice with smart quizzes</span>
+      <div class="explore-card">
+        <i class="fas fa-brain"></i>
+        <div class="explore-content">
+          <span class="explore-title">MCQ Test</span>
+          <span class="explore-desc">Practice with smart quizzes</span>
+        </div>
       </div>
-    </div>
-    <div class="explore-card">
-      <i class="fas fa-book-open"></i>
-      <div class="explore-content">
-        <span class="explore-title">Question Bank</span>
-        <span class="explore-desc">Review board questions with answers</span>
+      <div class="explore-card">
+        <i class="fas fa-book-open"></i>
+        <div class="explore-content">
+          <span class="explore-title">Question Bank</span>
+          <span class="explore-desc">Review board questions with answers</span>
+        </div>
       </div>
+      <a href="/chat-with-teacher/chat-with-teacher.html" class="explore-card">
+        <img src="/teacher.png" alt="Chat With Teacher" class="explore-img">
+        <div class="explore-title">Chat With Teacher</div>
+        <div class="explore-desc">Send your questions directly to the teacher and get personal replies.</div>
+      </a>
     </div>
-    <a href="/chat-with-teacher/chat-with-teacher.html" class="explore-card">
-      <img src="/teacher.png" alt="Chat With Teacher" class="explore-img">
-      <div class="explore-title">Chat With Teacher</div>
-      <div class="explore-desc">Send your questions directly to the teacher and get personal replies.</div>
-    </a>
   </section>
 
   <!-- Instructor -->
@@ -150,11 +152,20 @@
     </div>
   </section>
 
-  <!-- PWA Install Button -->
-  <div class="pwa-install-container" style="margin-bottom: 32px;">
-    <button class="pwa-install-btn" id="pwaInstallBtn" style="display:block;">
-      <i data-lucide="download"></i> Install Radiance App
+  <!-- PWA Install Button (below teacher section, not floating) -->
+  <div class="pwa-install-container" style="display:flex;justify-content:center;margin:48px 0 32px 0;">
+    <button id="pwaInstallBtnAlt" class="pwa-install-btn-alt" title="Install Radiance App" style="display:flex;">
+      <i class="fas fa-download"></i> Install Radiance App
     </button>
+  </div>
+  <!-- PWA Install Modal -->
+  <div id="pwaInstallModal" class="pwa-install-modal" style="display:none;">
+    <div class="pwa-modal-content">
+      <span class="close-modal" id="closePwaModal">&times;</span>
+      <h3>Install Radiance App</h3>
+      <p>For the best experience, install Radiance on your device. You'll get offline access and a full-screen app!</p>
+      <button id="modalInstallBtn" class="modal-install-btn">Install Now</button>
+    </div>
   </div>
 
   <!-- Footer Section -->
@@ -216,9 +227,6 @@
     </div>
   </div>
   <div class="overlay" id="overlay"></div>
-
-  <!-- Floating PWA Install Button -->
-  <button id="pwa-install-btn" class="pwa-install-btn">Install App</button>
 
   <!-- Scripts -->
   <script type="module" src="homepage.js"></script>

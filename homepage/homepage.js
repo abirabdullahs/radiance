@@ -112,32 +112,48 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// PWA Install Button Logic
+// PWA Install Button Logic for below-teacher button
 let deferredPrompt;
-const installBtn = document.getElementById('pwaInstallBtn');
+const installBtnAlt = document.getElementById('pwaInstallBtnAlt');
+const pwaModal = document.getElementById('pwaInstallModal');
+const modalInstallBtn = document.getElementById('modalInstallBtn');
+const closePwaModal = document.getElementById('closePwaModal');
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
+  if (installBtnAlt) installBtnAlt.style.display = 'flex';
 });
 
-if (installBtn) {
-  installBtn.style.display = 'block'; // Always show the button
-  installBtn.addEventListener('click', async () => {
+if (installBtnAlt) {
+  installBtnAlt.style.display = 'flex';
+  installBtnAlt.addEventListener('click', () => {
     if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') {
-        installBtn.textContent = 'App Installed!';
-        setTimeout(() => installBtn.textContent = 'Install Radiance App', 2000);
-      }
-      deferredPrompt = null;
+      if (pwaModal) pwaModal.style.display = 'flex';
     } else {
       alert('PWA install is not supported on your browser.');
     }
   });
 }
 
+if (modalInstallBtn) {
+  modalInstallBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      pwaModal.style.display = 'none';
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        installBtnAlt.textContent = 'App Installed!';
+        setTimeout(() => installBtnAlt.innerHTML = '<i class="fas fa-download"></i> Install Radiance App', 2000);
+      }
+      deferredPrompt = null;
+    }
+  });
+}
+if (closePwaModal) {
+  closePwaModal.onclick = () => { pwaModal.style.display = 'none'; };
+}
 window.addEventListener('appinstalled', () => {
-  if (installBtn) installBtn.textContent = 'Installed!';
+  if (installBtnAlt) installBtnAlt.textContent = 'Installed!';
+  if (pwaModal) pwaModal.style.display = 'none';
 });
